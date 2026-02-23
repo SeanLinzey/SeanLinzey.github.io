@@ -103,10 +103,6 @@
         <div class="tags">
           <span>PHP</span><span>MySQL</span><span>Auth</span><span>CRUD</span>
         </div>
-        <div class="links">
-          <a href="#" target="_blank" rel="noopener">Live</a>
-          <a href="#" target="_blank" rel="noopener">Code</a>
-        </div>
       </div>
 
       <div class="card project reveal">
@@ -115,9 +111,6 @@
         <div class="tags">
           <span>MySQL</span><span>ERD</span><span>SQL</span><span>Tuning</span>
         </div>
-        <div class="links">
-          <a href="#" target="_blank" rel="noopener">Details</a>
-        </div>
       </div>
 
       <div class="card project reveal">
@@ -125,10 +118,6 @@
         <p>Component-based React architecture backed by Firebase Firestore real-time data.</p>
         <div class="tags">
           <span>React</span><span>Firebase</span><span>Firestore</span><span>Deploy</span>
-        </div>
-        <div class="links">
-          <a href="#" target="_blank" rel="noopener">Live</a>
-          <a href="#" target="_blank" rel="noopener">Code</a>
         </div>
       </div>
     </div>
@@ -167,7 +156,8 @@
         <strong>Email:</strong> <a href="mailto:seanlinzeyy@gmail.com">seanlinzeyy@gmail.com</a>
       </p>
       <p class="contact-line">
-        <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/sean-linzey-0b597328a" target="_blank" rel="noopener">
+        <strong>LinkedIn:</strong>
+        <a href="https://linkedin.com/in/sean-linzey-0b597328a" target="_blank" rel="noopener">
           linkedin.com/in/sean-linzey-0b597328a
         </a>
       </p>
@@ -183,10 +173,8 @@
 </footer>
 
 <script>
-  // footer year
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // scroll reveal animations
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if (!prefersReducedMotion) {
@@ -203,7 +191,6 @@
 
     els.forEach(el => io.observe(el));
   } else {
-    // If user prefers reduced motion, show everything immediately
     document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
   }
 </script>
