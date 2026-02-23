@@ -16,8 +16,8 @@
       <a href="index.html#experience">Experience</a>
       <a href="index.html#projects">Projects</a>
       <a href="index.html#skills">Skills</a>
-      <a href="about.html" aria-current="page">About</a>
-      <a class="btn small" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a href="about.html">About</a>
+      <a class="btn small" href="resume.pdf" target="_blank">Resume</a>
     </nav>
   </div>
 </header>
@@ -26,59 +26,57 @@
   <div class="container">
     <h1 class="reveal glow">Little About Me</h1>
 
+    <!-- About -->
     <div class="card reveal">
       <p>
         I’m Sean Linzey, an Information Technology student at the University of Virginia
-        (B.S. expected Dec 2026). I like building systems that feel clean, fast, and reliable—
-        whether that’s a full-stack web app, a database that’s structured correctly, or a site
-        that’s easy for real users to navigate.
+        (B.S. expected December 2026). I enjoy building reliable, user-focused systems —
+        from full-stack web applications to well-structured databases. I focus on creating
+        solutions that are clean, efficient, and practical for real-world use.
       </p>
+
       <p>
-        I’ve worked on projects using React + Firebase, PHP + MySQL, and production web
-        deployments on GitHub Pages. I’m especially interested in roles where I can keep
-        improving my technical depth while shipping real results.
+        My experience includes developing applications with React and Firebase, building
+        full-stack projects using PHP and MySQL, and working on production websites that
+        serve real users. I’m particularly interested in opportunities where I can continue
+        expanding my technical depth while delivering meaningful results.
       </p>
     </div>
 
-    <div class="grid">
+    <!-- Focus -->
+    <div class="grid" style="margin-top:18px;">
+
       <div class="card reveal">
-        <h2>What I’m good at</h2>
+        <h2>What I’m Focused On</h2>
         <ul>
-          <li>Turning ideas into working web apps</li>
-          <li>Designing databases (ERDs, normalization, SQL queries)</li>
-          <li>Debugging + fixing issues fast</li>
-          <li>Keeping projects organized with Git/GitHub</li>
+          <li>Full-stack web development</li>
+          <li>Database design & SQL optimization</li>
+          <li>Building clean, reliable systems</li>
+          <li>Continuous learning and improvement</li>
         </ul>
       </div>
 
       <div class="card reveal">
-        <h2>What I’m looking for</h2>
-        <ul>
-          <li>Entry-level roles / internships in web dev, IT, or systems</li>
-          <li>Teams that value learning + strong documentation</li>
-          <li>Work that involves building and improving real tools</li>
-        </ul>
+        <h2>Quick Links</h2>
+        <p><strong>Email:</strong> <a href="mailto:seanlinzeyy@gmail.com">seanlinzeyy@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong>
+          <a href="https://linkedin.com/in/sean-linzey-0b597328a" target="_blank">
+            linkedin.com/in/sean-linzey-0b597328a
+          </a>
+        </p>
+        <p><strong>Resume:</strong> <a href="resume.pdf" target="_blank">View PDF</a></p>
       </div>
 
       <div class="card reveal">
-        <h2>Outside of work</h2>
+        <h2>Hobbies & Interests</h2>
         <p>
-          I enjoy learning new tools, improving my workflow, and building side projects
-          that I can actually show people. I’m also big on keeping things simple and
-          user-friendly.
+          Outside of technology, I am a Fourth-Degree Black Belt in Taekwondo, a discipline
+          that has strengthened my focus, consistency, and commitment to long-term goals.
+          I also enjoy bowling and continue working toward achieving a 200+ average, with
+          aspirations of competing at a professional level in the future.
         </p>
       </div>
-    </div>
 
-    <div class="card reveal" style="margin-top:18px;">
-      <h2>Quick Links</h2>
-      <p class="contact-line"><strong>Email:</strong> <a href="mailto:seanlinzeyy@gmail.com">seanlinzeyy@gmail.com</a></p>
-      <p class="contact-line"><strong>LinkedIn:</strong>
-        <a href="https://linkedin.com/in/sean-linzey-0b597328a" target="_blank" rel="noopener">
-          linkedin.com/in/sean-linzey-0b597328a
-        </a>
-      </p>
-      <p class="contact-line"><strong>Resume:</strong> <a href="resume.pdf" target="_blank" rel="noopener">View PDF</a></p>
     </div>
   </div>
 </section>
@@ -88,25 +86,27 @@
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+// Scroll reveal animation
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  if (!prefersReducedMotion) {
-    const els = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("in");
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
+if (!prefersReducedMotion) {
+  const els = document.querySelectorAll(".reveal");
 
-    els.forEach(el => io.observe(el));
-  } else {
-    document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
-  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  els.forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+}
 </script>
 
 </body>
