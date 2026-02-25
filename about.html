@@ -1,17 +1,18 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About | Sean Linzey</title>
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header class="nav">
   <div class="container nav-inner">
-    <div class="logo">SL</div>
+    <a href="index.html" class="logo">SL</a>
+
     <nav>
       <a href="index.html#experience">Experience</a>
       <a href="index.html#projects">Projects</a>
@@ -26,25 +27,21 @@
   <div class="container">
     <h1 class="reveal glow">Little About Me</h1>
 
-    <!-- About -->
     <div class="card reveal">
       <p>
         I’m Sean Linzey, an Information Technology student at the University of Virginia
         (B.S. expected December 2026). I enjoy building reliable, user-focused systems —
-        from full-stack web applications to well-structured databases. I focus on creating
-        solutions that are clean, efficient, and practical for real-world use.
+        from full-stack web applications to well-structured databases.
       </p>
 
       <p>
-        My experience includes developing applications with React and Firebase, building
-        full-stack projects using PHP and MySQL, and working on production websites that
-        serve real users. I’m particularly interested in opportunities where I can continue
-        expanding my technical depth while delivering meaningful results.
+        My experience includes developing applications with React and Firebase,
+        building full-stack projects using PHP and MySQL, and working on production
+        websites that serve real users.
       </p>
     </div>
 
-    <!-- Focus -->
-    <div class="grid" style="margin-top:18px;">
+    <div class="grid">
 
       <div class="card reveal">
         <h2>What I’m Focused On</h2>
@@ -52,19 +49,14 @@
           <li>Full-stack web development</li>
           <li>Database design & SQL optimization</li>
           <li>Building clean, reliable systems</li>
-          <li>Continuous learning and improvement</li>
         </ul>
       </div>
 
       <div class="card reveal">
         <h2>Quick Links</h2>
-        <p><strong>Email:</strong> <a href="mailto:seanlinzeyy@gmail.com">seanlinzeyy@gmail.com</a></p>
-        <p><strong>LinkedIn:</strong>
-          <a href="https://linkedin.com/in/sean-linzey-0b597328a" target="_blank">
-            linkedin.com/in/sean-linzey-0b597328a
-          </a>
-        </p>
-        <p><strong>Resume:</strong> <a href="resume.pdf" target="_blank">View PDF</a></p>
+        <p>Email: <a href="mailto:seanlinzeyy@gmail.com">seanlinzeyy@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/sean-linzey-0b597328a" target="_blank">linkedin.com/in/sean-linzey-0b597328a</a></p>
+        <p>Resume: <a href="resume.pdf" target="_blank">View PDF</a></p>
       </div>
 
       <div class="card reveal">
@@ -88,25 +80,16 @@
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Scroll reveal animation
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-if (!prefersReducedMotion) {
-  const els = document.querySelectorAll(".reveal");
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add("in");
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  els.forEach(el => io.observe(el));
-} else {
-  document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
-}
+const els = document.querySelectorAll(".reveal");
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add("in");
+      io.unobserve(e.target);
+    }
+  });
+});
+els.forEach(el => io.observe(el));
 </script>
 
 </body>

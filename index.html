@@ -9,9 +9,12 @@
 
 <body>
 
+<div id="top"></div>
+
 <header class="nav">
   <div class="container nav-inner">
-    <div class="logo">SL</div>
+    <a href="index.html" class="logo">SL</a>
+
     <nav>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
@@ -22,36 +25,20 @@
   </div>
 </header>
 
-
 <section class="hero reveal">
   <div class="container hero-inner">
     <p class="terminal">$ initializing_sean.exe</p>
     <h1 class="glow">Sean Linzey</h1>
     <h2>Systems-Focused Developer | IT & Full-Stack</h2>
+
     <p class="lead">
-      I design scalable web applications, optimize databases,
-      and ship production-ready systems.
+      I design scalable web applications, optimize databases, and ship production-ready systems.
     </p>
 
     <div class="cta-row">
       <a class="btn" href="#projects">View My Work</a>
-      <a class="btn ghost" href="resume.pdf" target="_blank" rel="noopener">View Resume</a>
+      <a class="btn ghost" href="resume.pdf" target="_blank">View Resume</a>
       <a class="btn ghost" href="resume.pdf" download>Download Resume</a>
-    </div>
-
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-num">React</div>
-        <div class="stat-label">+ Firebase app shipped</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">MySQL</div>
-        <div class="stat-label">DB design + tuning</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">Production</div>
-        <div class="stat-label">Website + payment flow</div>
-      </div>
     </div>
   </div>
 </section>
@@ -62,34 +49,18 @@
 
     <div class="card reveal">
       <h3>Full-Stack Web Developer – MinminMachine</h3>
-      <p>Built and deployed a production React app with Firebase cloud database integration.</p>
-      <ul>
-        <li>Responsive UI architecture</li>
-        <li>Firestore real-time database integration</li>
-        <li>Deployment via GitHub Pages</li>
-      </ul>
+      <p>Built and deployed a production React app with Firebase integration.</p>
     </div>
 
     <div class="card reveal">
       <h3>IT Projects Intern – University of Virginia</h3>
       <p>Designed normalized MySQL databases and optimized SQL queries.</p>
-      <ul>
-        <li>Schema refinement & performance tuning</li>
-        <li>Dynamic filtering & efficient retrieval</li>
-        <li>Testing and query tuning for scalability</li>
-      </ul>
     </div>
 
     <div class="card reveal">
       <h3>Web Development Intern – Taekwondo Universe</h3>
-      <p>Designed and maintained a production website with an online enrollment/payment flow.</p>
-      <ul>
-        <li>Wireframe → Deployment</li>
-        <li>Enrollment and payment workflow automation</li>
-        <li>Content, accounts, and analytics management</li>
-      </ul>
+      <p>Built and maintained a production website with enrollment and payment workflow.</p>
     </div>
-
   </div>
 </section>
 
@@ -98,28 +69,19 @@
     <h2 class="reveal">Projects</h2>
 
     <div class="grid">
-      <div class="card project reveal">
+      <div class="card reveal">
         <h3>Paw Posts</h3>
         <p>Full-stack PHP & MySQL application with authentication and database-driven content.</p>
-        <div class="tags">
-          <span>PHP</span><span>MySQL</span><span>Auth</span><span>CRUD</span>
-        </div>
       </div>
 
-      <div class="card project reveal">
+      <div class="card reveal">
         <h3>Academic Major Database System</h3>
-        <p>Normalized relational database with optimized SQL for dynamic filtering and matching.</p>
-        <div class="tags">
-          <span>MySQL</span><span>ERD</span><span>SQL</span><span>Tuning</span>
-        </div>
+        <p>Relational database with optimized SQL queries for filtering and matching.</p>
       </div>
 
-      <div class="card project reveal">
+      <div class="card reveal">
         <h3>Production React App</h3>
-        <p>Component-based React architecture backed by Firebase Firestore real-time data.</p>
-        <div class="tags">
-          <span>React</span><span>Firebase</span><span>Firestore</span><span>Deploy</span>
-        </div>
+        <p>React architecture with Firebase Firestore real-time database.</p>
       </div>
     </div>
   </div>
@@ -136,35 +98,14 @@
       </div>
 
       <div class="card reveal">
-        <h3>Backend & Databases</h3>
-        <p>PHP, MySQL, Firebase Firestore, SQL Optimization</p>
+        <h3>Backend</h3>
+        <p>PHP, MySQL, Firebase, SQL Optimization</p>
       </div>
 
       <div class="card reveal">
-        <h3>Tools & Systems</h3>
-        <p>Git/GitHub, Debugging, Deployment, Agile/Scrum</p>
+        <h3>Tools</h3>
+        <p>Git/GitHub, Debugging, Deployment, Agile</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section alt">
-  <div class="container">
-    <h2 class="reveal">Let’s Connect</h2>
-
-    <div class="card reveal contact-card">
-      <p class="contact-line">
-        <strong>Email:</strong> <a href="mailto:seanlinzeyy@gmail.com">seanlinzeyy@gmail.com</a>
-      </p>
-      <p class="contact-line">
-        <strong>LinkedIn:</strong>
-        <a href="https://linkedin.com/in/sean-linzey-0b597328a" target="_blank" rel="noopener">
-          linkedin.com/in/sean-linzey-0b597328a
-        </a>
-      </p>
-      <p class="contact-line">
-        <strong>Resume:</strong> <a href="resume.pdf" target="_blank" rel="noopener">View PDF</a>
-      </p>
     </div>
   </div>
 </section>
@@ -174,26 +115,18 @@
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (!prefersReducedMotion) {
-    const els = document.querySelectorAll(".reveal");
-
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("in");
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    els.forEach(el => io.observe(el));
-  } else {
-    document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
-  }
+const els = document.querySelectorAll(".reveal");
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add("in");
+      io.unobserve(e.target);
+    }
+  });
+});
+els.forEach(el => io.observe(el));
 </script>
 
 </body>
