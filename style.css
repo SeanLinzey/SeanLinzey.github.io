@@ -36,9 +36,7 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
+a:hover { text-decoration: underline; }
 
 .container {
   width: 90%;
@@ -47,7 +45,6 @@ a:hover {
 }
 
 /* NAV */
-
 .nav {
   position: sticky;
   top: 0;
@@ -63,7 +60,6 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   gap: 14px;
-  flex-wrap: wrap;
 }
 
 .nav-inner nav {
@@ -71,6 +67,7 @@ a:hover {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .nav a {
@@ -79,9 +76,7 @@ a:hover {
   border-radius: 10px;
 }
 
-.nav a:hover {
-  color: var(--accent);
-}
+.nav a:hover { color: var(--accent); }
 
 .logo {
   font-weight: 800;
@@ -93,8 +88,32 @@ a:hover {
   background: rgba(22,27,34,.65);
 }
 
-/* HERO */
+.btn {
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #081018;
+  border-radius: 12px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
 
+.btn:hover { text-decoration: none; }
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn.small {
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+/* HERO */
 .hero {
   padding: 92px 0 54px;
   text-align: center;
@@ -111,9 +130,7 @@ h1 {
   margin: 10px 0 8px;
 }
 
-.glow {
-  text-shadow: 0 0 18px rgba(34,211,238,.22);
-}
+.glow { text-shadow: 0 0 18px rgba(34,211,238,.22); }
 
 h2 {
   margin-bottom: 14px;
@@ -132,25 +149,7 @@ h2 {
   flex-wrap: wrap;
 }
 
-.btn {
-  padding: 12px 18px;
-  background: var(--accent);
-  color: #081018;
-  border-radius: 12px;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-}
-
-.btn.ghost {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text);
-}
-
-.section {
-  padding: 70px 0;
-}
+.section { padding: 70px 0; }
 
 .section.alt {
   background: rgba(255,255,255,.02);
@@ -210,7 +209,6 @@ h2 {
 }
 
 /* Reveal animation */
-
 .reveal {
   opacity: 0;
   transform: translateY(14px);
@@ -222,12 +220,34 @@ h2 {
   transform: translateY(0);
 }
 
-/* MOBILE */
-
-@media (max-width: 640px) {
+/* MOBILE FIXES (this is the important part) */
+@media (max-width: 700px) {
   .container { width: 92%; }
 
-  h1 { font-size: 34px; }
+  /* Stack navbar: logo on top, links below */
+  .nav-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-inner nav {
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav a {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .btn.small {
+    padding: 9px 12px;
+    font-size: 14px;
+  }
+
+  h1 { font-size: 34px; line-height: 1.1; }
   h2 { font-size: 18px; }
 
   .hero { padding: 64px 0 38px; }
@@ -235,19 +255,11 @@ h2 {
 
   .card { padding: 16px; }
 
-  .nav-inner {
-    justify-content: center;
-    text-align: center;
-  }
-
-  .nav-inner nav {
-    justify-content: center;
-    width: 100%;
-  }
-
+  /* Buttons go full-width for easy tapping */
   .btn {
     width: 100%;
     max-width: 420px;
+    text-align: center;
   }
 
   .stat {
